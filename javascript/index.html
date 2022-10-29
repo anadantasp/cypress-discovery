@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypress Discovery</title>
+</head>
+<body>
+    <!-- <h1>Olá, <span id="nome"></span></h1> -->
+
+    <h1>CNH</h1>
+    <input type="text" name="nome" placeholder="Seu primeiro nome" />
+    <input type="number" name="idade" placeholder="Sua idade">
+    <button type="button" onclick="verificarIdade()">Verificar idade</button>
+
+    <h1>Vingadores</h1>
+
+    <button type="button" onclick="listaVingadores()">Listar vingadores</button>
+
+    <ul id="avengers"></ul>
+
+    <script type="text/javascript">
+        var avengers = ['Tony Stark', 'Clint Barton', 'Natasha Romanoff', 'Steve Rogers']
+
+        function listaVingadores(){
+            var ul = document.getElementById('avengers')
+            ul.innerHTML = ''
+
+            avengers.forEach(function(a){
+              var li = document.createElement('li')
+              var text = document.createTextNode(a)
+              li.appendChild(text)
+              ul.appendChild(li)
+            })
+        }
+
+        function verificarIdade(){
+           var nome = document.querySelector('input[name=nome'); //seletor css pra obter um elemento através de uma propriedade relevante
+           var idade = document.querySelector('input[name=idade]');
+
+           if(idade.value.length == 0){
+            alert('Idade é um campo obrigatório.')
+            return
+           }
+
+           var idadeNum = parseInt(idade.value)
+
+          if(idadeNum >= 18){
+            alert('Ok, você pode tirar sua CNH')
+          }else if(idadeNum > 4){
+            alert('Você é menor de idade, por enquanto sugiro andar de bike.')
+          }else{
+            alert('Melhor você tomar leite...')
+          }
+        }
+        /* var nome = prompt("Qual o seu nome?");
+        var recebeIdade = prompt("Informe a sua idade. ");
+
+        var idade = parseInt(recebeIdade);
+        
+
+        console.log(nome);
+        console.log(typeof nome);
+
+        console.log(idade);
+        console.log(typeof idade)
+
+        
+
+
+        document.getElementById("nome").innerText = nome; //qual o valor que eu vou colocar na propriedade innerText do elemento que tem o id nome */
+
+    </script>
+</body>
+</html>
