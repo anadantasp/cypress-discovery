@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-08T13:47:34.360Z",
+    "end": "2022-11-08T13:47:44.198Z",
+    "duration": 9838,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6ea72d09-007c-4cbf-bab2-47485bbcf26b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro.cy.js",
+      "file": "cypress\\e2e\\cadastro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "25291e42-318d-46ba-af81-7eec442d33b7",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Usuário deve se tornar um entregador",
+              "fullTitle": "Cadastro Usuário deve se tornar um entregador",
+              "timedOut": null,
+              "duration": 6366,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var deliver = {\n  name: 'Ana Prado',\n  cpf: \"00000014141\",\n  email: 'anaprado@email.com',\n  whatsapp: '11999999999',\n  address: {\n    postalcode: '04534011',\n    street: 'Rua Joaquim Floriano',\n    number: '1000',\n    details: 'Apto 142',\n    district: 'Itaim Bibi',\n    city_state: 'São Paulo/SP'\n  },\n  delivery_method: 'Moto',\n  cnh: 'cnh-digital.jpg'\n};\nvar signup = new _SignupPage.default();\nsignup.go();\nsignup.fillForm(deliver);\nsignup.submit();\nconst expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.';\nsignup.modalContentShouldBe(expectedMessage);",
+              "err": {},
+              "uuid": "a3c70062-04ea-42e5-87a8-5aca9af22ba3",
+              "parentUUID": "25291e42-318d-46ba-af81-7eec442d33b7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CPF incorreto",
+              "fullTitle": "Cadastro CPF incorreto",
+              "timedOut": null,
+              "duration": 3287,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var deliver = {\n  name: 'Ana Prado',\n  cpf: \"000000141AA\",\n  email: 'anaprado@email.com',\n  whatsapp: '11999999999',\n  address: {\n    postalcode: '04534011',\n    street: 'Rua Joaquim Floriano',\n    number: '1000',\n    details: 'Apto 142',\n    district: 'Itaim Bibi',\n    city_state: 'São Paulo/SP'\n  },\n  delivery_method: 'Moto',\n  cnh: 'cnh-digital.jpg'\n};\nvar signup = new _SignupPage.default();\nsignup.go();\nsignup.fillForm(deliver);\nsignup.submit();\nsignup.alertMessageShouldBe('Oops! CPF inválido');",
+              "err": {},
+              "uuid": "b782eb2c-2e2a-42f4-bbd6-c73f59a3150e",
+              "parentUUID": "25291e42-318d-46ba-af81-7eec442d33b7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a3c70062-04ea-42e5-87a8-5aca9af22ba3",
+            "b782eb2c-2e2a-42f4-bbd6-c73f59a3150e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9653,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "customReportFilename",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "bugereats",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": true,
+        "reportFilename": "customReportFilename"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
